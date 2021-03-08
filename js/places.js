@@ -97,10 +97,11 @@ function renderPlaces(places) {
         // add place name
         let newPlace = document.createElement('a-link');
         //text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-		newPlace.setAttribute("gps-entity-place", {
+		/*newPlace.setAttribute("gps-entity-place", {
             "latitude" : latitude,
             "longitude" : longitude
-        });
+        });*/
+		newPlace.setAttribute('gps-entity-place', `latitude: ${latitude} longitude: ${longitude};`);
 		
         newPlace.setAttribute('title', place.name);
         newPlace.setAttribute('href', 'http://www.example.com/');
