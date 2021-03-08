@@ -1,5 +1,5 @@
 // getting places from APIs
-function loadPlaces(position) {
+/*function loadPlaces(position) {
     const params = {
         radius: 300,    // search places not farther than this value (in meters)
         clientId: '<your-client-id>',
@@ -28,7 +28,7 @@ function loadPlaces(position) {
         .catch((err) => {
             console.error('Error with places API', err);
         })
-};
+};*/
 
 
 window.onload = () => {
@@ -38,15 +38,15 @@ window.onload = () => {
     return navigator.geolocation.getCurrentPosition(function (position) {
 
         // than use it to load from remote APIs some places nearby
-        loadPlaces(position.coords)
-            .then((places) => {
-                places.forEach((place) => {
+        //loadPlaces(position.coords)
+            //.then((places) => {
+                //places.forEach((place) => {
                     const latitude = place.location.lat;
                     const longitude = place.location.lng;
 
                     // add place name
                     const placeText = document.createElement('a-link');
-                    placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                    placeText.setAttribute('gps-entity-place', `latitude: 59.345426; longitude: 17.961517;`);
                     placeText.setAttribute('title', place.name);
                     placeText.setAttribute('scale', '15 15 15');
                     
@@ -56,7 +56,7 @@ window.onload = () => {
 
                     scene.appendChild(placeText);
                 });
-            })
+            //})
     },
         (err) => console.error('Error in retrieving position', err),
         {
