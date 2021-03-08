@@ -8,6 +8,7 @@
 		<script src="aframe/build/aframe-ar-nft.js"></script>
 		<link rel="stylesheet" href="aframe/src/location-based/stylesheets/index.css">
 		<link rel="stylesheet" href="css/style.css">
+		
 	</head>
 
 	<!-- Dynamically add places from Javascript -->
@@ -28,6 +29,19 @@
 	  <a-box material="color: green" gps-entity-place="latitude: 59.332720; longitude: 18.040760"/>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
-		<div class="footer">Version 11</div>
+		<div class="footer">Version 11 <span id="userposition"></span></div>
 	</body>
+	<script>
+		var x = document.getElementById("userposition");
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+
+		function showPosition(position) {
+		  x.innerHTML = "<br>Latitude: " + position.coords.latitude +
+		  "<br>Longitude: " + position.coords.longitude;
+		}
+	</script> 
 </html>
