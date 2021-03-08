@@ -3,7 +3,7 @@
 	<head>
 		<meta charset='utf-8'>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-		<title>Suncalc v+</title>
+		<title>Suncalc v10</title>
 		<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 		<script src="aframe/build/aframe-ar-nft.js"></script>
 		<link rel="stylesheet" href="aframe/src/location-based/stylesheets/index.css">
@@ -22,11 +22,12 @@
       <a-text
         value="Hej Fisen"
         look-at="[gps-camera]"
-        scale="15 15 15"
+        scale="30 30 30"
         gps-entity-place="latitude: 59.345169; longitude: 17.962429;"
       ></a-text>
+	  <a-box material="color: yellow" gps-entity-place="latitude: 59.345169; longitude: 17.962429"/>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
-		<div class="footer">Version 9</div>
+		<div class="footer">Version 10</div>
 	</body>
 </html>
