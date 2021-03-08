@@ -9,7 +9,7 @@ window.onload = () => {
         return renderPlaces(places);
     }
 
-    if (method !== 'static') {
+    /*if (method !== 'static') {
         // first get current user location
         return navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -26,7 +26,7 @@ window.onload = () => {
                 timeout: 27000,
             }
         );
-    }
+    }*/
 };
 
 function staticLoadPlaces() {
@@ -56,6 +56,7 @@ function staticLoadPlaces() {
 }
 
 // getting places from REST APIs
+/*
 function dynamicLoadPlaces(position) {
     let params = {
         radius: 300,    // search places not farther than this value (in meters)
@@ -86,30 +87,24 @@ function dynamicLoadPlaces(position) {
             console.error('Error with places API', err);
         })
 };
-
+*/
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+		let latlng = 'latitude:' + latitude + '; longitude: ' + longitude + ';';
 
-        // add place name
-        let newPlace = document.createElement('a-link');
-        //text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-		/*newPlace.setAttribute("gps-entity-place", {
-            "latitude" : latitude,
-            "longitude" : longitude
-        });*/
-		newPlace.setAttribute('gps-entity-place', `latitude: ${latitude} longitude: ${longitude};`);
-		
-        newPlace.setAttribute('title', place.name);
-        newPlace.setAttribute('href', 'http://www.example.com/');
+        let newPlace = document.createElement('a-text');
+		newPlace.setAttribute('value', place.name);
+		newPlace.setAttribute('text', place.name);
+		newPlace.setAttribute("gps-entity-place", latlng);
         newPlace.setAttribute('scale', '15 15 15');
 
-        newPlace.addEventListener('loaded', () => {
+        /*newPlace.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
-        });
+        });*/
 
         scene.appendChild(newPlace);
     });
