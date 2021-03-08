@@ -45,6 +45,13 @@ function staticLoadPlaces() {
                 lng: 18.063379, // change here longitude if using static data
             }
         },
+		{
+            name: "Norrbyvagen",
+            location: {
+                lat: 59.345169, // change here latitude if using static data
+                lng: 17.962429, // change here longitude if using static data
+            }
+        },
     ];
 }
 
