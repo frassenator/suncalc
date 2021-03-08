@@ -3,7 +3,7 @@
 	<head>
 		<meta charset='utf-8'>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-		<title>Suncalc v16</title>
+		<title>Suncalc v17</title>
 		<!--<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>-->
 		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 		<script src="aframe/build/aframe-ar-nft.js"></script>
@@ -20,9 +20,10 @@
 		<a-box material="color: red" gps-entity-place="latitude: 59.341309497873986; longitude: 17.96491527004468;"></a-box>
 		<a-box material="color: green" gps-entity-place="latitude: 59.34454514790137; longitude: 17.963289275968602;"></a-box>
 		<a-box material="color: blue" gps-entity-place="latitude: 59.345131838658816; longitude: 17.962248578852385;"></a-box>
-		<a-camera gps-camera rotation-reader> </a-camera>
+		<!-- <a-camera gps-camera rotation-reader> </a-camera> -->
+		<a-camera id='camera1' look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' rotation-reader> </a-camera>
     </a-scene>
-		<div class="footer">Version 16</div>
+		<div class="footer">Version 17</div>
 		<script>
 			const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
 			console.log(distanceMsg); 
