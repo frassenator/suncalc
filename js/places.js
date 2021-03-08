@@ -95,17 +95,23 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         // add place name
-        let text = document.createElement('a-link');
-        text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-		console.log(text.getAttribute('gps-entity-place'));
-        text.setAttribute('title', place.name);
-        text.setAttribute('href', 'http://www.example.com/');
-        text.setAttribute('scale', '15 15 15');
+        let newPlace = document.createElement('a-link');
+        //text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+		newPlace.setAttribute("gps-entity-place", {
+            "latitude" : latitude,
+            "longitude" : longitude
+        });
+		
+		
+		
+        newPlace.setAttribute('title', place.name);
+        newPlace.setAttribute('href', 'http://www.example.com/');
+        newPlace.setAttribute('scale', '15 15 15');
 
-        text.addEventListener('loaded', () => {
+        newPlace.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
         });
 
-        scene.appendChild(text);
+        scene.appendChild(newPlace);
     });
 }
