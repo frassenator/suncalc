@@ -102,8 +102,6 @@ function renderPlaces(places) {
             "longitude" : longitude
         });
 		
-		
-		
         newPlace.setAttribute('title', place.name);
         newPlace.setAttribute('href', 'http://www.example.com/');
         newPlace.setAttribute('scale', '15 15 15');
