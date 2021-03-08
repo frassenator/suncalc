@@ -46,7 +46,7 @@ window.onload = () => {
 
                     // add place name
                     const placeText = document.createElement('a-link');
-                    placeText.setAttribute('gps-entity-place', `latitude: 59.345426; longitude: 17.961517;`);
+                    placeText.setAttribute('gps-entity-place', latitude: 59.345426; longitude: 17.961517;);
                     placeText.setAttribute('title', "Norrbyvagen");
                     placeText.setAttribute('scale', '15 15 15');
                     
