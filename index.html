@@ -14,12 +14,19 @@
 	<!--<script src="js/places.js"></script>-->
 
 	<body style='margin: 0; overflow: hidden;'>
-		<a-scene vr-mode-ui="enabled: false" embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
-			<a-camera gps-camera rotation-reader></a-camera>
-			<a-text color="red" value="Huddinge" text="Huddinge" gps-entity-place="longitude: 59.195560; latitude: 18.063379" scale="300 300 300"></a-text>
-			<a-text color="red" value="Wargentinsgatan" text="Wargentinsgatan" gps-entity-place="longitude: 59.332720; latitude: 18.040760" scale="150 150 150"></a-text>
-			<a-text color="red" value="Norrbyvagen" text="Norrbyvagen" gps-entity-place="longitude: 59.345169; latitude: 17.962429" scale="15 15 15"></a-text>
-		</a-scene>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-text
+        value="This content will always face you."
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 59.345169; longitude: 17.962429;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
 		<div class="footer">Version 7</div>
 	</body>
 </html>
